@@ -9,7 +9,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///coursePage.db"
 db = SQLAlchemy(app)
 
 class coursePage(db.Model):
-	Uname = db.Column(db.String(20), primary_key = True)
+	Sno = db.Column(db.Integer, primary_key = True)
+	Uname = db.Column(db.String(20), nullable = False)
 	Upass = db.Column(db.String(20), nullable = False)
 	Ldate = db.Column(db.DateTime, default = datetime.now(timezone.utc))
 
@@ -25,7 +26,7 @@ def hello():
 @app.route('/signUp')
 def signUp():
 	datenow = (datetime.now(timezone.utc))
-	# details = coursePage(Uname = "PTGG", Upass = "ptgGamer", Ldate = datenow)
+	details = coursePage(Uname = "PTGG", Upass = "ptgGamer", Ldate = datenow)
 	db.session.add(details)
 	db.session.commit()
 	return render_template("signUp.html")
@@ -38,12 +39,16 @@ def signIn():
 @app.route("/courses")
 def course():
 	return render_template("courses.html")
-	
+
+@app.route("/user")
+def user():
+	alldata = coursePage.query.all()
+	print(alldata)
+	return render_template('Users.html',alldata = alldata)
+
 @app.route("/show")
 def show():
-	allcoursePage = coursePage.query.all()
-	print(allcoursePage)
-	return "This is return the data from database"
+	return 'this is data to show open terminal'
 
 if __name__ == "__main__":
 	app.run(debug = True)

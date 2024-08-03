@@ -153,7 +153,9 @@
     background-color: #c4e297;
     color: black;
 }
-
+.d-block{
+    height: 100vh !important;
+}
 .boxing.invert{
     background-color: black;
     color: #c4e297;
@@ -191,6 +193,29 @@
             </div>
         </div>
     </nav>
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
     <section class="popular-courses container mb-5">
         <h2 class="section-title text-left mt-5">Recommended Courses</h2>
         <div class="row all-course">

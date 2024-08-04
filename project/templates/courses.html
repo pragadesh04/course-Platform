@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
     <style>
-        /* Global Styles */
+/* Global Styles */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #f0f0f0; /* Light Gray for Light Mode */
@@ -37,6 +37,7 @@ body {
     background-color: #ffffff; /* White */
     transition: background-color 0.2s ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+    align-items: center;
 }
 
 /* Dark Mode for Navbar */
@@ -78,6 +79,10 @@ body.dark .nav-link {
 
 .nav-link:hover {
     color: #6c757d; /* Medium Gray */
+}
+
+body.dark .nav-link:hover {
+    color: #9e9e9e; /* Light Gray */
 }
 
 .active {
@@ -155,7 +160,7 @@ body.dark .course-title {
 }
 
 body.dark .course-description {
-    color: #adb5bd; /* Light Gray */
+    color: #9e9e9e; /* Light Gray */
 }
 
 .all-course {
@@ -290,10 +295,51 @@ body.dark .boxing.invert:hover {
     width: 35px;
     height: 35px;
 }
+
 .cardHead{
     margin-top: 3rem;
 }
-    </style>
+/* Card Styles */
+.card {
+    background-color: #ffffff; /* White */
+    border: 1px solid #dee2e6; /* Light Gray Border */
+    border-radius: 0.5rem; /* Rounded Corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+    transition: background-color 0.3s, color 0.3s; /* Smooth Transition */
+}
+
+body.dark .card {
+    background-color: #333333; /* Dark Gray */
+    border: 1px solid #444444; /* Darker Border */
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #000000; /* Black */
+}
+
+body.dark .card-title {
+    color: #ffffff; /* White */
+}
+
+.card-text {
+    color: #6c757d; /* Medium Gray */
+}
+
+body.dark .card-text {
+    color: #9e9e9e; /* Light Gray */
+}
+
+/* Card Image */
+.card-img-top {
+    border-top-left-radius: 0.5rem; /* Rounded Top Left Corner */
+    border-top-right-radius: 0.5rem; /* Rounded Top Right Corner */
+}
+.s{
+    padding-top: 0.5rem;
+}
+</style>
 </head>
 
 <body>
@@ -306,17 +352,17 @@ body.dark .boxing.invert:hover {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse right" id="navbarNav">
-                <ul class="navbar-nav ms-auto"> <!-- Aligning nav items to the right -->
-                    <li class="nav-item">
+                <ul class="navbar-nav"> <!-- Aligning nav items to the right -->
+                    <li class="nav-item s">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item s">
                         <a class="nav-link" href="/courses">Courses</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item s">
                         <a class="nav-link" href="/about">About</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item s">
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
@@ -332,7 +378,7 @@ body.dark .boxing.invert:hover {
 
     <!-- Container for Courses -->
     <div class="container">
-        <div class="row row-cols-1 cardHead row-cols-md-2 g-4">
+        <div class="row row-cols-1 cardHead row-cols-md-4 g-4">
             <!-- Card 1 -->
             <div class="col">
                 <div class="card">
@@ -341,6 +387,10 @@ body.dark .boxing.invert:hover {
                         <h5 class="card-title">Card Title</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
+                            <div class="d-flex flexBox">
+                                <p class="h4 mb-0"><span class="badge">Price</span></p>
+                                <p class="h4 price mb-0">Rs. 000.00</p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -352,6 +402,10 @@ body.dark .boxing.invert:hover {
                         <h5 class="card-title">Card Title</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
+                            <div class="d-flex flexBox">
+                                <p class="h4 mb-0"><span class="badge">Price</span></p>
+                                <p class="h4 price mb-0">Rs. 000.00</p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -363,6 +417,10 @@ body.dark .boxing.invert:hover {
                         <h5 class="card-title">Card Title</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
                             additional content.</p>
+                            <div class="d-flex flexBox">
+                                <p class="h4 mb-0"><span class="badge">Price</span></p>
+                                <p class="h4 price mb-0">Rs. 000.00</p>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -374,6 +432,10 @@ body.dark .boxing.invert:hover {
                         <h5 class="card-title">Card Title</h5>
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
                             additional content. This content is a little bit longer.</p>
+                            <div class="d-flex flexBox">
+                                <p class="h4 mb-0"><span class="badge">Price</span></p>
+                                <p class="h4 price mb-0">Rs. 000.00</p>
+                            </div>
                     </div>
                 </div>
             </div>

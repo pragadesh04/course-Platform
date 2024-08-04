@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-....." crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-....." crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/TrintyVC.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+        }
+        .form-items {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+
+        }
+        .form-container{
+            background-color: rgba(255, 255, 255, 0.711);
+            padding: 3rem 2rem;
+            border: 3px black dotted;
+            border-radius: 25% 5% 25% 5%;
+            -webkit-box-shadow:0px 0px 16px 5px rgba(0,0,0,0.9);
+            -moz-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.9);
+            box-shadow: 0px 0px 16px 5px rgba(0, 0, 0, 0.474);
+        }
+        .form-control {
+            width: 100%;
+        }
+        .form-container {
+            max-width: 400px; /* Adjust width as needed */
+            width: 100%;
+        }
+        .text-center {
+            text-align: center; /* Ensure text is centered */
+        }
+        .image {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 50%;
+        background-color: rgb(57, 57, 57);
+        padding: 10px; /* Adjust padding if needed */
+        width: 50px; /* Adjust width */
+        height: 50px; /* Adjust height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .image img {
+        width: 100%;
+        height: 100%;
+    }
+        
+    </style>
+    <div class="form-items">
+        <div class="form-container">
+            <form action="/login" method="post">
+                <p class="h3 text-center">Trinity-Login</p>
+                <br>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <br>
+                <p class="h6 text-center">Don't have an Account? &nbsp;<a href="/signup">sign-up</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="image">
+        <a href="/"><img src="{{ url_for('static', filename='images/home.svg') }}" alt="Toggle Theme"></a>
+    </div>
+</body>
+</html>

@@ -1,95 +1,403 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=720px, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-....." crossorigin="anonymous">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-....." crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-....." crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navdark navdd fixed-top">
-        <a class="navbar-brand" href="#">Trinity</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse right" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link navdark" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navdark" href="/courses">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navdark" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navdark" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navdark boxing" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link navdark boxing invert" href="/signup">SignUp</a>
-                </li>
-            </ul>
-        </div>
-</nav>
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-              <div class="card">
-                <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card">
-                <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-    </div>
-    <button class="toggle-theme logo" id="toggleTheme"><img height="35px" src="{{ url_for('static', filename='images/sunMoon.svg') }}"></button>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    <script>
-        // script.js
-
-// Function to toggle dark mode
-function toggleDarkMode() {
-    document.body.classList.toggle('dark'); // Toggle the 'dark' class on the body
+    <!-- Custom CSS -->
+    <style>
+        /* Global Styles */
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f0f0; /* Light Gray for Light Mode */
+    color: #000000; /* Black */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition between themes */
 }
-document.getElementById('toggleTheme').addEventListener('click', toggleDarkMode);
 
+/* Light and Dark Themes */
+.light {
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black */
+}
+
+.dark {
+    background-color: #000000; /* Black */
+    color: #ffffff; /* White */
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 0.5rem 0;
+    background-color: #ffffff; /* White */
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+}
+
+/* Dark Mode for Navbar */
+body.dark .navbar {
+    background-color: #333333; /* Dark Gray */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000000; /* Black */
+    margin-left: 2rem;
+}
+
+body.dark .navbar-brand {
+    color: #ffffff; /* White */
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000; /* Black */
+    padding: 0 0.75rem;
+}
+
+body.dark .nav-link {
+    color: #ffffff; /* White */
+}
+
+.nav-link:hover {
+    color: #6c757d; /* Medium Gray */
+}
+
+.active {
+    color: #000000; /* Black */
+    font-weight: bold;
+}
+
+body.dark .active {
+    color: #ffffff; /* White */
+}
+
+.nav-link.disabled {
+    color: #adb5bd; /* Light Gray */
+    cursor: not-allowed;
+}
+
+body.dark .nav-link.disabled {
+    color: #6c757d; /* Medium Gray */
+}
+
+/* Badge Styles */
+.badge {
+    background-color: #e9ecef; /* Light Gray */
+    color: #000000; /* Black */
+}
+
+body.dark .badge {
+    background-color: #6c757d; /* Medium Gray */
+    color: #ffffff; /* White */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000; /* Black */
+}
+
+body.dark .section-title {
+    color: #ffffff; /* White */
+}
+
+/* Course Styles */
+.course-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.course {
+    padding: 10px;
+    border-radius: 5%;
+    background-color: #ffffff; /* White */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+body.dark .course {
+    background-color: #333333; /* Dark Gray */
+}
+
+.course-title {
+    font-weight: 600;
+    color: #000000; /* Black */
+}
+
+body.dark .course-title {
+    color: #ffffff; /* White */
+}
+
+.course-description {
+    font-size: 0.9rem;
+    color: #6c757d; /* Medium Gray */
+}
+
+body.dark .course-description {
+    color: #adb5bd; /* Light Gray */
+}
+
+.all-course {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.all-course a {
+    text-decoration: none;
+}
+
+/* Flexbox Utility Classes */
+.flexBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.right {
+    justify-content: end;
+}
+
+/* Carousel Styles */
+.carouselControl {
+    margin-top: 4rem;
+}
+
+.popular-courses {
+    margin-top: -2rem;
+}
+
+/* Navigation Dark Mode */
+.navdark {
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black */
+    padding: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+}
+
+body.dark .navdark {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+}
+
+/* Pricing Styles */
+.price {
+    color: #000000; /* Black */
+    background-color: #f8f9fa; /* Light Gray */
+    padding: 2px;
+    border-radius: 5px;
+}
+
+body.dark .price {
+    color: #ffffff; /* White */
+    background-color: #6c757d; /* Medium Gray */
+}
+
+/* Boxing Styles */
+.boxing {
+    padding: 5px;
+    border: 2px solid #000000; /* Black */
+    border-radius: 10px 0 10px 0;
+    margin-left: 10px;
+    color: #000000; /* Black */
+    background-color: #ffffff; /* White */
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s; /* Smooth Transition */
+}
+
+body.dark .boxing {
+    border-color: #6c757d; /* Medium Gray */
+    background-color: #6c757d; /* Medium Gray */
+    color: #ffffff; /* White */
+}
+
+.boxing:hover {
+    border-color: #333333; /* Dark Gray */
+    background-color: #f8f9fa; /* Light Gray */
+    color: #333333; /* Dark Gray */
+}
+
+body.dark .boxing:hover {
+    border-color: #ffffff; /* White */
+    background-color: #6c757d; /* Medium Gray */
+    color: #ffffff; /* White */
+}
+
+.boxing.invert {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+    margin-right: 2rem;
+}
+
+body.dark .boxing.invert {
+    background-color: #ffffff; /* White */
+    color: #333333; /* Dark Gray */
+}
+
+.boxing.invert:hover {
+    border-color: #000000; /* Black */
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black */
+}
+
+body.dark .boxing.invert:hover {
+    border-color: #ffffff; /* White */
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+}
+
+/* Additional Styles */
+.ac {
+    height: 30% !important;
+    width: 90%;
+    margin-top: 0.5rem;
+}
+
+/* Button for Theme Toggle */
+.toggle-theme {
+    background-color: gray; /* Black */
+    color: #ffffff; /* White */
+    border: none;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.toggle-theme img {
+    width: 35px;
+    height: 35px;
+}
+.cardHead{
+    margin-top: 3rem;
+}
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Trinity</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse right" id="navbarNav">
+                <ul class="navbar-nav ms-auto"> <!-- Aligning nav items to the right -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link boxing" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link boxing invert" href="/signup">SignUp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container for Courses -->
+    <div class="container">
+        <div class="row row-cols-1 cardHead row-cols-md-2 g-4">
+            <!-- Card 1 -->
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="col">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Card Title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toggle Theme Button -->
+    <button class="toggle-theme" id="toggleTheme">
+        <img src="{{ url_for('static', filename='images/sunMoon.svg') }}" alt="Toggle Theme">
+    </button>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-....." crossorigin="anonymous"></script>
+    <!-- Custom Script -->
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark'); // Toggle the 'dark' class on the body
+        }
+        document.getElementById('toggleTheme').addEventListener('click', toggleDarkMode);
     </script>
 </body>
+
 </html>

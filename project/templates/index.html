@@ -17,22 +17,117 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-....." crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        /* Add custom styles below Bootstrap's */
-        body {
+/* Global Styles */
+body {
     font-family: 'Nunito', sans-serif;
-    background-color: #121907;
-    color: #f3f9e9;
+    background-color: #f8f9fa; /* Light Gray for Light Mode */
+    color: #212529; /* Dark Gray */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition between themes */
 }
-
+.container{
+    width: 100%;
+}
+/* Light and Dark Themes */
 .light {
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: #ffffff; /* White */
+    color: #000000; /* Black */
 }
 
 .dark {
-    background-color: rgb(63, 63, 63);
-    color: white;
+    background-color: #212529; /* Dark Gray */
+    color: #ffffff; /* White */
 }
+
+/* Navbar Styles */
+.navbar {
+    padding: 0.5rem 0;
+    background-color: #ffffff; /* White */
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+}
+
+/* Dark Mode for Navbar */
+body.dark .navbar {
+    background-color: #333333; /* Dark Gray */
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #212529; /* Dark Gray */
+    margin-left: 2rem;
+}
+
+body.dark .navbar-brand {
+    color: #ffffff; /* White */
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #212529; /* Dark Gray */
+    padding: 0 0.75rem;
+}
+
+body.dark .nav-link {
+    color: #ffffff; /* White */
+}
+
+.nav-link:hover {
+    color: #495057; /* Medium Gray */
+}
+
+.active {
+    color: #212529; /* Dark Gray */
+    font-weight: bold;
+}
+
+body.dark .active {
+    color: #ffffff; /* White */
+}
+
+.nav-link.disabled {
+    color: #adb5bd; /* Light Gray */
+    cursor: not-allowed;
+}
+
+body.dark .nav-link.disabled {
+    color: #6c757d; /* Medium Gray */
+}
+
+/* Badge Styles */
+.badge {
+    background-color: #e9ecef; /* Light Gray */
+    color: #212529; /* Dark Gray */
+}
+
+body.dark .badge {
+    background-color: #495057; /* Darker Gray */
+    color: #ffffff; /* White */
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #212529; /* Dark Gray */
+}
+
+body.dark .section-title {
+    color: #ffffff; /* White */
+}
+
+/* Course Styles */
 .course-img {
     width: 100%;
     height: 200px;
@@ -40,131 +135,185 @@
     border-radius: 5px;
 }
 
+.course {
+    padding: 10px;
+    border-radius: 5%;
+    background-color: #ffffff; /* White */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+body.dark .course {
+    background-color: #333333; /* Dark Gray */
+}
+
+.course-title {
+    font-weight: 600;
+    color: #212529; /* Dark Gray */
+}
+
+body.dark .course-title {
+    color: #ffffff; /* White */
+}
+
+.course-description {
+    font-size: 0.9rem;
+    color: #6c757d; /* Medium Gray */
+}
+
+body.dark .course-description {
+    color: #adb5bd; /* Light Gray */
+}
+
+.all-course {
+    display: flex;
+    justify-content: space-even;
+    flex-direction: row;
+    margin: 1px;
+}
+
+.all-course a {
+    text-decoration: none;
+}
+
+/* Flexbox Utility Classes */
 .flexBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.course-title {
-    font-weight: 600;
-}
-
-.course{
-    padding: 10px;
-    border-radius: 5%;
-}
-.course-description {
-    font-size: 0.9rem;
-    color: gray;
-}
-
-.navbar {
-    padding: 0.5rem 0;
-    background-color: rgba(0, 0, 0, 0.1);
-    transition: background-color 0.2s ease-in-out;
-}
-/* 
-.navbar:hover {
-    background-color: #95e0e1;
-} */
-
-.all-course{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-}
-.navbar-brand {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #121907;
-}
-
-.navbar-dark .navbar-brand {
-    color: #121907;
-}
-
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-.badge{
-    background-color: #c4e297;
-    color:#121907;
-}
-.nav-link {
-    font-size: 1rem;
-    font-weight: 500;
-    color: white;
-    padding: 0 0.75rem;
-}
-
-.nav-link:hover {
-    color: rgba(255, 255, 255, 0.75);
-}
-
-.active {
-    color: white;
-    font-weight: bold;
-}
-
-.nav-link.disabled {
-    color: rgba(255, 255, 255, 0.5);
-    cursor: not-allowed;
-}
-
-.section-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #c4e297;
-}
-.right{
+.right {
     justify-content: end;
 }
-.navdark{
-    background-color: #c4e297;
-    color: #121907;
-    padding: 5px;
+
+/* Carousel Styles */
+.carouselControl {
+    margin-top: 4rem;
 }
-.price{
-    color:#121907;
-    background-color: #5ad1b7;
+
+.popular-courses {
+    margin-top: -2rem;
+    margin-bottom: 6rem;
+}
+
+/* Navigation Dark Mode */
+.navdark {
+    background-color: #ffffff; /* White */
+    color: #212529; /* Dark Gray */
+    padding: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Soft Shadow */
+}
+
+body.dark .navdark {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+}
+
+/* Pricing Styles */
+.price {
+    color: #212529; /* Dark Gray */
+    background-color: #f8f9fa; /* Light Gray */
     padding: 2px;
     border-radius: 5px;
 }
-.boxing{
+
+body.dark .price {
+    color: #ffffff; /* White */
+    background-color: #6c757d; /* Medium Gray */
+}
+
+/* Boxing Styles */
+.boxing {
     padding: 5px;
-    border: #121907 solid 2px;
+    border: 2px solid #212529; /* Dark Gray */
     border-radius: 10px 0 10px 0;
     margin-left: 10px;
+    color: #212529; /* Dark Gray */
+    background-color: #ffffff; /* White */
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s; /* Smooth Transition */
 }
 
-.boxing:hover{
-    border: #c4e297 solid 2px;
-    background-color: black;
-    color: #c4e297;
+body.dark .boxing {
+    border-color: #495057; /* Medium Gray */
+    background-color: #495057; /* Medium Gray */
+    color: #ffffff; /* White */
 }
 
-.boxing.invert:hover{
-    border: black solid 2px;
-    background-color: #c4e297;
-    color: black;
+.boxing:hover {
+    border-color: #333333; /* Dark Gray */
+    background-color: #f8f9fa; /* Light Gray */
+    color: #333333; /* Dark Gray */
 }
-.d-block{
-    height: 100vh !important;
+
+body.dark .boxing:hover {
+    border-color: #ffffff; /* White */
+    background-color: #6c757d; /* Medium Gray */
+    color: #ffffff; /* White */
 }
-.boxing.invert{
-    background-color: black;
-    color: #c4e297;
+
+.boxing.invert {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+    margin-right: 2rem;
 }
-    </style>
+
+body.dark .boxing.invert {
+    background-color: #ffffff; /* White */
+    color: #333333; /* Dark Gray */
+}
+
+.boxing.invert:hover {
+    border-color: #212529; /* Dark Gray */
+    background-color: #ffffff; /* White */
+    color: #212529; /* Dark Gray */
+}
+
+body.dark .boxing.invert:hover {
+    border-color: #ffffff; /* White */
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+}
+
+/* Additional Styles */
+.ac {
+    height: 30% !important;
+    width: 90%;
+    margin-top: 0.5rem;
+}
+
+/* Button for Theme Toggle */
+.toggle-theme {
+    background-color: #212529; /* Dark Gray */
+    color: #ffffff; /* White */
+    border: none;
+    padding: 10px 
+}
+/* Fixed Position for Toggle Button */
+.toggle-theme {
+    position: fixed;          /* Fixed position */
+    bottom: 20px;            /* Distance from the bottom */
+    right: 20px;             /* Distance from the right */
+    background-color: gray;  /* Background color */
+    color: #fff;             /* Text color */
+    border: none;            /* Remove border */
+    border-radius: 50%;      /* Rounded shape */
+    padding: 12px;           /* Padding for the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for effect */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    z-index: 1000;           /* Ensure it's above other elements */
+}
+
+/* Toggle Button Hover Effect */
+.toggle-theme:hover {
+    background-color: #495057; /* Darker Gray on hover */
+    color: #fff;              /* Text color on hover */
+}
+
+</style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navdark">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navdark navdd fixed-top">
             <a class="navbar-brand" href="#">Trinity</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -191,35 +340,39 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </nav>
-
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="d-block w-100" alt="...">
+    <div class="container-fluid carouselControl">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='images/wall.jpg') }}" class="d-block w-100" alt="{{ url_for('static', filename='images/wall.jpg') }}">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/wall.jpg') }}" class="d-block w-100" alt="{{ url_for('static', filename='images/wall.jpg') }}">
+              </div>
+              <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/wall.jpg') }}" class="d-block w-100" alt="{{ url_for('static', filename='images/OIP.jpg') }}">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-
-    <section class="popular-courses container mb-5">
+          <div class="popular-courses container">
         <h2 class="section-title text-left mt-5">Recommended Courses</h2>
         <div class="row all-course">
             <div class="col-md-4 course col-sm-6">
+                <a href="/courses">
                 <div class="course-item">
                     <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
                     <div class="position-relative">
@@ -231,8 +384,10 @@
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             <div class="col-md-4 course col-sm-6">
+                <a href="/courses">
                 <div class="course-item">
                     <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
                     <div class="position-relative">
@@ -244,8 +399,10 @@
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             <div class="col-md-4 course col-sm-6">
+                <a href="/courses">
                 <div class="course-item">
                     <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
                     <div class="position-relative">
@@ -257,11 +414,23 @@
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
             </div>
-    </section>
-
+        </div>
+</div>
+<button class="toggle-theme logo" id="toggleTheme"><img height="35px" src="{{ url_for('static', filename='images/sunMoon.svg') }}"></button>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <script>
+        // script.js
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+    document.body.classList.toggle('dark'); // Toggle the 'dark' class on the body
+}
+document.getElementById('toggleTheme').addEventListener('click', toggleDarkMode);
+
+    </script>
 </body>
 </html>

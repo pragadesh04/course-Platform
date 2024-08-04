@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-....." crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-....." crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+/* General Body Styles */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333; /* Dark background */
+}
+
+.navbar-brand {
+    margin-left: 2rem;
+    color: #fff; /* White text color */
+}
+
+.navbar-brand:hover {
+    color: #ddd; /* Light gray on hover */
+}
+
+.navbar-nav .nav-link {
+    color: #fff; /* White text color for links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd; /* Light gray on hover */
+}
+
+.navbar-toggler {
+    border-color: #fff; /* White border for toggler button */
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,...'); /* Customize toggler icon */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        text-align: center; /* Center align navbar items on small screens */
+    }
+
+    .navbar-nav .nav-item {
+        margin: 10px 0; /* Margin for nav items on small screens */
+    }
+}
+
+/* Container Styles */
+.container {
+    margin-top: 20px;
+}
+
+/* Heading Styles */
+.h5, .h6 {
+    color: #333;
+}
+
+/* List Styles */
+ul {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Box Styling */
+.boxing {
+    padding: 5px;
+    border: 2px solid #212529; /* Dark Gray */
+    border-radius: 10px 0 10px 0;
+    margin-left: 10px;
+    color: #212529; /* Dark Gray */
+    background-color: #ffffff; /* White */
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s; /* Smooth Transition */
+}
+
+.boxing:hover {
+    border-color: #333333; /* Dark Gray */
+    background-color: #f8f9fa; /* Light Gray */
+    color: #333333; /* Dark Gray */
+}
+
+.boxing.invert {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff; /* White */
+    margin-right: 2rem;
+}
+
+.boxing.invert:hover {
+    border-color: #212529; /* Dark Gray */
+    background-color: #ffffff; /* White */
+    color: #212529; /* Dark Gray */
+}
+
+/* Dark Mode Adjustments */
+body.dark .navbar {
+    background-color: #495057; /* Medium Gray */
+}
+
+body.dark .navbar-brand,
+body.dark .navbar-nav .nav-link {
+    color: #fff; /* White text color in dark mode */
+}
+
+body.dark .navbar-nav .nav-link:hover {
+    color: #ccc; /* Light gray on hover in dark mode */
+}
+
+/* Box Styling */
+.boxing {
+    padding: 5px;
+    border: 2px solid #212529; /* Dark Gray */
+    border-radius: 10px 0 10px 0;
+    margin-left: 10px;
+    color: rgb(0, 0, 0) !important; /* White text color */ 
+    background-color: white; /* Bootstrap primary color */
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s; /* Smooth Transition */
+}
+
+.boxing:hover {
+    border-color: white; /* Darker shade of blue */
+    background-color: #212529; /* Darker shade of blue */
+    color: #ffffff !important; /* White text color */
+}
+
+.boxing.invert {
+    background-color: #333333; /* Dark Gray */
+    color: #ffffff !important; /* White text color */
+    margin-right: 2rem;
+}
+
+.boxing.invert:hover {
+    border-color: #ffffff; /* White */
+    background-color: #ffffff; /* White */
+    color: black !important; /* Dark Gray */
+}
+
+
+/* Terms and Conditions Styling */
+.terms {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+.terms h3 {
+    margin-bottom: 20px;
+}
+
+.terms h5 {
+    margin-top: 10px;
+}
+.right{
+    justify-content: end;
+}
+.favoe{
+    margin-top: 5rem;
+}
+    </style>
+    <title>About</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navdark navdd fixed-top">
+        <a class="navbar-brand" href="#">Trinity</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse right" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link navdark" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navdark" href="/courses">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navdark" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navdark" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navdark boxing" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navdark boxing invert" href="/signup">SignUp</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+
+    <div class="container favoe">
+        <p class="h5">
+            In our tailoring classes, we offer a comprehensive educational experience designed to equip all participants with a thorough understanding of tailoring from the ground up. Our curriculum begins with fundamental concepts, including:
+        </p>
+        <ul>
+            <li>
+                <p class="h6">Precise Measurement Techniques:</p>
+                Participants will learn how to take accurate measurements essential for creating well-fitting garments. This includes understanding how to measure different body types and sizes effectively.
+            </li>
+            <li>
+                <p class="h6">Required Measurements for Various Garments:</p>
+                We cover the specific measurements needed for a range of clothing types, ensuring that students can adapt their techniques to suit various styles and designs.
+            </li>
+            <li>
+                <p class="h6">Cutting Methods:</p>
+                Instruction includes detailed guidance on cutting techniques, which are crucial for achieving precise and professional results. This encompasses understanding fabric grain, pattern placement, and cutting accuracy.
+            </li>
+            <li>
+                <p class="h6">Cloth Requirements for Different Types of Dresses:</p>
+                We teach how to calculate the amount of fabric required for different garments, allowing students to plan and execute their projects efficiently.
+            </li>
+        </ul>
+
+        <p class="h5">
+            Our goal is to ensure that every participant gains a thorough and practical knowledge of all aspects of tailoring. By the end of the course, students will have the skills needed to:
+        </p>
+        <ul>
+            <li>
+                <p class="h6">Earn from Home:</p>
+                Apply their newfound expertise to stitch garments from the comfort of their own homes, creating opportunities for independent income.
+            </li>
+            <li>
+                <p class="h6">Start a Business:</p>
+                Utilize their skills to establish their own tailoring business, whether it be a small enterprise or a larger commercial venture.
+            </li>
+            <li>
+                <p class="h6">Teach Others:</p>
+                Share their knowledge by teaching tailoring to others, providing them with an additional revenue stream.
+            </li>
+        </ul>
+
+        <p class="h5">
+            Furthermore, our program includes in-depth training on the art of pattern creation, allowing students to understand and master the intricate process of designing and drafting patterns. This ensures that our graduates not only become proficient tailors but also develop the capability to innovate and excel in the tailoring industry.
+        </p>
+
+        <div class="terms">
+            <h3>Terms and Conditions</h3>
+            <p>
+                <h5>1. ourse Content:</h5>Our classes consist solely of recorded courses. Participants will have access to pre-recorded materials and will not receive live instruction.
+            </p>
+            <p>
+                <h5>2. Access:</h5>Access to course materials is provided for a specified duration as outlined at the time of registration. Participants are responsible for completing the course within this timeframe.
+            </p>
+            <p>
+                <h5>3. Refund Policy:</h5> No refunds will be issued for any course fees after registration. Please review the course details thoroughly before enrolling.
+            </p>
+            <p>
+                <h5>4. Technical Issues:</h5> We are not liable for any technical issues that may affect access to course materials. It is the participant’s responsibility to ensure they have the necessary equipment and internet connectivity.
+            </p>
+            <p>
+                <h5>5. Fair Usage Policy:</h5> Participants must use the course materials for personal learning only. Any unauthorized recording, distribution, or sale of course videos is strictly prohibited.
+            </p>
+            <p>
+                <h5>6. Intellectual Property:</h5> All course materials are the intellectual property of our organization. Unauthorized sharing or reproduction of these materials is prohibited.
+            </p>
+            <p>
+                <h5>7. Changes to Terms:</h5>We reserve the right to update or modify these terms at any time. Participants will be notified of any significant changes.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

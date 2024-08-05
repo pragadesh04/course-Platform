@@ -26,6 +26,7 @@ def __repr__(self) -> str:
     return f"datas('{self.username}', '{self.password}')"
 
 @app.route("/")
+@app.route("/home")
 def home():
     return render_template("index.html")
 

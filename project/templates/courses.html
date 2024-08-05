@@ -347,108 +347,157 @@ body.dark .actives{
     background-color: #585858; /* Dark Gray */
     color: white;
 }
+body.dark .navbar{
+    color: #ffffff;
+    background-color: #495057 !important;
+}
+#navbarNav{
+    justify-content: end;
+}
+.popular-courses {
+    padding: 20px 0;
+}
+
+.course-item {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 15px; /* Add horizontal space around each card */
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-title {
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.course-description {
+    color: #666;
+}
+
+.badge {
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.price {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
 </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Trinity</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse right" id="navbarNav">
-                <ul class="navbar-nav"> <!-- Aligning nav items to the right -->
-                    <li class="nav-item s">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item s actives">
-                        <a class="nav-link" href="/courses">Courses</a>
-                    </li>
-                    <li class="nav-item s">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
-                    <li class="nav-item s">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link boxing" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link boxing invert" href="/signup">SignUp</a>
-                    </li>
-                </ul>
+          <a class="navbar-brand" href="/">Trinity</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="popular-courses container">
+        <h2 class="section-title text-left mt-5">Courses</h2>
+        <div class="row all-course justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="/courses" class="text-decoration-none">
+                    <div class="course-item shadow-sm">
+                        <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                        <div class="p-3 position-relative">
+                            <h3 class="course-title">Course Title 1</h3>
+                            <p class="course-description">Learn about the latest technology and its applications.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                <p class="h5 price mb-0">Rs. 000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="/courses" class="text-decoration-none">
+                    <div class="course-item shadow-sm">
+                        <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                        <div class="p-3 position-relative">
+                            <h3 class="course-title">Course Title 2</h3>
+                            <p class="course-description">Learn about the latest technology and its applications.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                <p class="h5 price mb-0">Rs. 000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="/courses" class="text-decoration-none">
+                    <div class="course-item shadow-sm">
+                        <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                        <div class="p-3 position-relative">
+                            <h3 class="course-title">Course Title 3</h3>
+                            <p class="course-description">Learn about the latest technology and its applications.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                <p class="h5 price mb-0">Rs. 000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a href="/courses" class="text-decoration-none">
+                    <div class="course-item shadow-sm">
+                        <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                        <div class="p-3 position-relative">
+                            <h3 class="course-title">Course Title 3</h3>
+                            <p class="course-description">Learn about the latest technology and its applications.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                <p class="h5 price mb-0">Rs. 000.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </nav>
-
-    <!-- Container for Courses -->
-    <div class="container">
-        <div class="row row-cols-1 cardHead row-cols-md-4 g-4">
-            <!-- Card 1 -->
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                            <div class="d-flex flexBox">
-                                <p class="h4 mb-0"><span class="badge">Price</span></p>
-                                <p class="h4 price mb-0">Rs. 000.00</p>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                            <div class="d-flex flexBox">
-                                <p class="h4 mb-0"><span class="badge">Price</span></p>
-                                <p class="h4 price mb-0">Rs. 000.00</p>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content.</p>
-                            <div class="d-flex flexBox">
-                                <p class="h4 mb-0"><span class="badge">Price</span></p>
-                                <p class="h4 price mb-0">Rs. 000.00</p>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="col">
-                <div class="card">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" class="card-img-top" alt="Course Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                            <div class="d-flex flexBox">
-                                <p class="h4 mb-0"><span class="badge">Price</span></p>
-                                <p class="h4 price mb-0">Rs. 000.00</p>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div>        
+</div>
 
     <!-- Toggle Theme Button -->
     <button class="toggle-theme" id="toggleTheme">

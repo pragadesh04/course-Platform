@@ -64,38 +64,43 @@
     background-color: #585858; /* Dark Gray */
     color: white;
 }
+body.dark .navbar{
+    color: #ffffff;
+    background-color: #495057 !important;
+}
+#navbarNav{
+    justify-content: end;
+}
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <a class="navbar-brand" href="/">Trinity</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Trinity</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse right navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav s">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/courses">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link actives" href="/contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link boxing" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link boxing invert" href="/signup">SignUp</a>
-                </li>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link " " href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
             </ul>
+          </div>
         </div>
-    </nav>
-
+      </nav>
     <div class="container">
         <div class="contact-info text-center">
             <h2 class="text-center">Contact Us</h2>

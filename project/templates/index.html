@@ -109,6 +109,8 @@ body.dark .nav-link.disabled {
 .badge {
     background-color: #e9ecef; /* Light Gray */
     color: #212529; /* Dark Gray */
+    font-size: 0.9rem;
+    font-weight: normal;
 }
 
 body.dark .badge {
@@ -320,37 +322,79 @@ body.dark .actives{
     background-color: #585858; /* Dark Gray */
     color: white;
 }   
+body.dark .navbar{
+    color: #ffffff;
+    background-color: #495057 !important;
+}
+#navbarNav{
+    justify-content: end;
+}
+.popular-courses {
+    padding: 20px 0;
+}
+
+.course-item {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 0 15px; /* Add horizontal space around each card */
+}
+
+.course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-title {
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.course-description {
+    color: #666;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navdark navdd fixed-top">
-            <a class="navbar-brand" href="/">Trinity</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse right" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link navdark actives" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navdark" href="/courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navdark" href="/about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navdark" href="/contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navdark boxing" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navdark boxing invert" href="/signup">SignUp</a>
-                    </li>
-                </ul>
-            </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Trinity</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/courses">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <div class="container-fluid carouselControl">
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
@@ -378,56 +422,73 @@ body.dark .actives{
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-          <div class="popular-courses container">
-        <h2 class="section-title text-left mt-5">Recommended Courses</h2>
-        <div class="row all-course">
-            <div class="col-md-4 course col-sm-6">
-                <a href="/courses">
-                <div class="course-item">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
-                    <div class="position-relative">
-                        <h3 class="course-title">Course Title 1</h3>
-                        <p class="course-description">Learn about the latest technology and its applications.</p>
-                        <div class="d-flex flexBox">
-                            <p class="h4 mb-0"><span class="badge">Price</span></p>
-                            <p class="h4 price mb-0">Rs. 000.00</p>
+
+
+          <div class="popular-courses container-fluid">
+            <h2 class="section-title text-left mt-5">Recommended Courses</h2>
+            <div class="row all-course justify-content-center">
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="/courses" class="text-decoration-none">
+                        <div class="course-item shadow-sm">
+                            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                            <div class="p-3 position-relative">
+                                <h3 class="course-title">Course Title 1</h3>
+                                <p class="course-description">Learn about the latest technology and its applications.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                    <p class="h5 price mb-0">Rs. 000.00</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </a>
-            </div>
-            <div class="col-md-4 course col-sm-6">
-                <a href="/courses">
-                <div class="course-item">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
-                    <div class="position-relative">
-                        <h3 class="course-title">Course Title 1</h3>
-                        <p class="course-description">Learn about the latest technology and its applications.</p>
-                        <div class="d-flex flexBox">
-                            <p class="h4 mb-0"><span class="badge">Price</span></p>
-                            <p class="h4 price mb-0">Rs. 000.00</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="/courses" class="text-decoration-none">
+                        <div class="course-item shadow-sm">
+                            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                            <div class="p-3 position-relative">
+                                <h3 class="course-title">Course Title 2</h3>
+                                <p class="course-description">Learn about the latest technology and its applications.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                    <p class="h5 price mb-0">Rs. 000.00</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </a>
-            </div>
-            <div class="col-md-4 course col-sm-6">
-                <a href="/courses">
-                <div class="course-item">
-                    <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
-                    <div class="position-relative">
-                        <h3 class="course-title">Course Title 1</h3>
-                        <p class="course-description">Learn about the latest technology and its applications.</p>
-                        <div class="d-flex flexBox">
-                            <p class="h4 mb-0"><span class="badge">Price</span></p>
-                            <p class="h4 price mb-0">Rs. 000.00</p>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="/courses" class="text-decoration-none">
+                        <div class="course-item shadow-sm">
+                            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                            <div class="p-3 position-relative">
+                                <h3 class="course-title">Course Title 3</h3>
+                                <p class="course-description">Learn about the latest technology and its applications.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                    <p class="h5 price mb-0">Rs. 000.00</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-            </a>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <a href="/courses" class="text-decoration-none">
+                        <div class="course-item shadow-sm">
+                            <img src="{{ url_for('static', filename='images/OIP.jpg') }}" alt="Course Image" class="course-img">
+                            <div class="p-3 position-relative">
+                                <h3 class="course-title">Course Title 3</h3>
+                                <p class="course-description">Learn about the latest technology and its applications.</p>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p class="h5 mb-0"><span class="badge bg-primary">Price</span></p>
+                                    <p class="h5 price mb-0">Rs. 000.00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-            </div>
-        </div>
+        </div>        
 </div>
 
 <button class="toggle-theme logo" id="toggleTheme"><img height="35px" src="{{ url_for('static', filename='images/sunMoon.svg') }}"></button>
